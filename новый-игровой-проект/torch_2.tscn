@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceol36337ha3c"]
+
+[ext_resource type="PackedScene" uid="uid://dji6yrcb2p1a5" path="res://assets/assets/models/Torch_2/Torch_2.fbx" id="1_u72bd"]
+[ext_resource type="Texture2D" uid="uid://raihsl1pkiqb" path="res://assets/assets/models/Torch_2/Torch_2_256.png" id="2_3fckx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuxcp"]
+albedo_texture = ExtResource("2_3fckx")
+
+[node name="Torch_2" instance=ExtResource("1_u72bd")]
+
+[node name="Torch_2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tuxcp")

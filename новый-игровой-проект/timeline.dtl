@@ -1,0 +1,6 @@
+character: ДОБРО ПОЖАЛОВАТЬ В МОЮ КОМНАТУ
+[wait time="1.0"]
+player: ....что?
+character: Дада с тобой говорю 
+ИДЮ СЮДА
+[end_timeline]
