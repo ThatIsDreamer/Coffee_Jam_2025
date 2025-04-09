@@ -1,7 +1,6 @@
-[gd_scene load_steps=19 format=4 uid="uid://u1gyjtvm0kc"]
+[gd_scene load_steps=17 format=4 uid="uid://u1gyjtvm0kc"]
 
 [ext_resource type="Texture2D" uid="uid://bos5ljrsfi6ky" path="res://assets/assets/textures/dev/grids/Dark/texture_07.png" id="1_8uh7m"]
-[ext_resource type="Texture2D" uid="uid://wcxe2eoov8aq" path="res://assets/assets/hdris/kloppenheim_07_puresky_4k.exr" id="2_6uqi0"]
 [ext_resource type="Texture2D" uid="uid://d0hog2jseb5yq" path="res://assets/assets/sfx/VERT_sticker.png" id="2_g14j6"]
 [ext_resource type="Script" uid="uid://rk8dqeyq2lbs" path="res://scripts/player.gd" id="3_6uqi0"]
 [ext_resource type="Texture2D" uid="uid://raihsl1pkiqb" path="res://assets/assets/models/Torch_2/Torch_2_256.png" id="4_ppyta"]
@@ -19,11 +18,7 @@ albedo_texture = ExtResource("2_g14j6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehkex"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ykrsh"]
-panorama = ExtResource("2_6uqi0")
-
 [sub_resource type="Sky" id="Sky_g14j6"]
-sky_material = SubResource("PanoramaSkyMaterial_ykrsh")
 
 [sub_resource type="Environment" id="Environment_vbegm"]
 background_mode = 2

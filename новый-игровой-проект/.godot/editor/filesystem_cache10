@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1744223642
+::res://::1744227645
 character.dch::Resource/DialogicCharacter::898023804158467836::1744218768::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::5915729343829138614::1744209979::1744209986::1::::<><><>0<>0<>fbced92f00021e16df628bc1665adbab<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-player.dch::Resource/DialogicCharacter::3874937593193886084::1744218777::0::1::::<><><>0<>0<><>::
-test.tscn::PackedScene::42878187012033162::1744221151::0::1::::<><><>0<>0<><>::uid://bos5ljrsfi6ky::::res://assets/assets/textures/dev/grids/Dark/texture_07.png<>uid://wcxe2eoov8aq::::res://assets/assets/hdris/kloppenheim_07_puresky_4k.exr<>uid://d0hog2jseb5yq::::res://assets/assets/sfx/VERT_sticker.png<>uid://rk8dqeyq2lbs::::res://scripts/player.gd<>uid://raihsl1pkiqb::::res://assets/assets/models/Torch_2/Torch_2_256.png<>uid://biqvsinbf7tcc::::res://assets/assets/sfx/flash.mp3
-timeline.dtl::Resource/DialogicTimeline::2754498319994041420::1744218911::0::1::::<><><>0<>0<><>::
+player.dch::Resource/DialogicCharacter::3874937593193886084::1744223831::0::1::::<><><>0<>0<><>::
+test.tscn::PackedScene/PackedScene::42878187012033162::1744223893::0::1::::<><><>0<>0<><>::uid://bos5ljrsfi6ky::::res://assets/assets/textures/dev/grids/Dark/texture_07.png<>uid://wcxe2eoov8aq::::res://assets/assets/hdris/kloppenheim_07_puresky_4k.exr<>uid://d0hog2jseb5yq::::res://assets/assets/sfx/VERT_sticker.png<>uid://rk8dqeyq2lbs::::res://scripts/player.gd<>uid://raihsl1pkiqb::::res://assets/assets/models/Torch_2/Torch_2_256.png<>uid://biqvsinbf7tcc::::res://assets/assets/sfx/flash.mp3
+timeline.dtl::Resource/DialogicTimeline::2754498319994041420::1744223874::0::1::::<><><>0<>0<><>::
 torch_2.tscn::PackedScene/PackedScene::5083217592438545522::1744213979::0::1::::<><><>0<>0<><>::uid://dji6yrcb2p1a5::::res://assets/assets/models/Torch_2/Torch_2.fbx<>uid://raihsl1pkiqb::::res://assets/assets/models/Torch_2/Torch_2_256.png
 ::res://addons/::1744218162
 ::res://addons/dialogic/::1744218169
@@ -615,10 +615,9 @@ TimelineResourceLoader.gd::GDScript/GDScript::930008393414530646::1744218168::0:
 TimelineResourceSaver.gd::GDScript/GDScript::6598021197640389826::1744218168::0::1::::DialogicTimelineFormatSaver<>ResourceFormatSaver<><>0<>1<><>::
 ::res://assets/::1744210030
 ::res://assets/assets/::1744214770
-::res://assets/assets/hdris/::1744213243
+::res://assets/assets/hdris/::1744227145
 kloofendal_48d_partly_cloudy_puresky_2k.hdr::CompressedTexture2D/CompressedTexture2D::4726365196544975229::1744210030::1744210532::1::::<><><>0<>0<>8772bcd472b484de652ba956fe8caf19<>res://.godot/imported/kloofendal_48d_partly_cloudy_puresky_2k.hdr-59fec83b0823190bda1a917ce1c74f71.bptc.ctex::
 kloppenheim_07_puresky_4k.exr::CompressedTexture2D/CompressedTexture2D::1549688374519419996::1744213228::1744213243::1::::<><><>0<>0<>e21605ad7d8e1da9f577cdf2a2444d80<>res://.godot/imported/kloppenheim_07_puresky_4k.exr-cb63bd0ae241f6f6397e6dfd1d5883d0.bptc.ctex::
-moonless_golf_4k.exr::CompressedTexture2D/CompressedTexture2D::6742412739679361353::1744213165::1744213184::1::::<><><>0<>0<>2edcda6d5d154a563d77319b5518f3e0<>res://.godot/imported/moonless_golf_4k.exr-af27c40ed78800d9c1aa9a15dc2b07cb.bptc.ctex::
 ::res://assets/assets/models/::1744213796
 ::res://assets/assets/models/Battery/::1744213801
 Battery.fbx::PackedScene/PackedScene::7497570992299782344::1744213796::1744213801::1::::<><><>0<>0<>b1d744119a14f588bddf9070dfb022c4<>res://.godot/imported/Battery.fbx-98ac47ec4ed78dc611caf83c084faecd.scn::
@@ -986,4 +985,4 @@ texture_07.png::CompressedTexture2D/CompressedTexture2D::3408064947511274488::17
 texture_05.png::CompressedTexture2D/CompressedTexture2D::7516308207978913603::1744210030::1744210654::1::::<><><>0<>0<>b815fce2b76d673c33a62d9822c4c174<>res://.godot/imported/texture_05.png-e0218e5c4ade144c2aaa5cc51d9aaaaa.s3tc.ctex::
 ::res://scenes/::1744210401
 ::res://scripts/::1744219370
-player.gd::GDScript::1215863985195881784::1744219370::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.gd::GDScript/GDScript::1215863985195881784::1744219370::0::1::::<>CharacterBody3D<><>0<>0<><>::
