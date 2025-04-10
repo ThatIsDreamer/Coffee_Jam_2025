@@ -1,32 +1,40 @@
-[gd_scene load_steps=17 format=4 uid="uid://u1gyjtvm0kc"]
+[gd_scene load_steps=20 format=4 uid="uid://u1gyjtvm0kc"]
 
-[ext_resource type="Texture2D" uid="uid://bos5ljrsfi6ky" path="res://assets/assets/textures/dev/grids/Dark/texture_07.png" id="1_8uh7m"]
-[ext_resource type="Texture2D" uid="uid://d0hog2jseb5yq" path="res://assets/assets/sfx/VERT_sticker.png" id="2_g14j6"]
+[ext_resource type="Texture2D" uid="uid://bos5ljrsfi6ky" path="res://assets/assets/textures/dev/grids/Dark/texture_07.png" id="1_6uqi0"]
+[ext_resource type="Texture2D" uid="uid://d0hog2jseb5yq" path="res://assets/assets/sfx/VERT_sticker.png" id="2_ppyta"]
 [ext_resource type="Script" uid="uid://rk8dqeyq2lbs" path="res://scripts/player.gd" id="3_6uqi0"]
-[ext_resource type="Texture2D" uid="uid://raihsl1pkiqb" path="res://assets/assets/models/Torch_2/Torch_2_256.png" id="4_ppyta"]
+[ext_resource type="Texture2D" uid="uid://3utttgjthyrj" path="res://assets/assets/hdris/kloppenheim_07_puresky_4k.exr" id="3_ykrsh"]
+[ext_resource type="Texture2D" uid="uid://raihsl1pkiqb" path="res://assets/assets/models/Torch_2/Torch_2_256.png" id="5_g14j6"]
 [ext_resource type="AudioStream" uid="uid://biqvsinbf7tcc" path="res://assets/assets/sfx/flash.mp3" id="5_ykrsh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g14j6"]
 size = Vector3(5.25195, 5.06036, 5.30518)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppyta"]
-albedo_texture = ExtResource("1_8uh7m")
+albedo_texture = ExtResource("1_6uqi0")
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbegm"]
-albedo_texture = ExtResource("2_g14j6")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykrsh"]
+albedo_texture = ExtResource("2_ppyta")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehkex"]
 
-[sub_resource type="Sky" id="Sky_g14j6"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g14j6"]
+panorama = ExtResource("3_ykrsh")
+
+[sub_resource type="Sky" id="Sky_vbegm"]
+sky_material = SubResource("PanoramaSkyMaterial_g14j6")
 
 [sub_resource type="Environment" id="Environment_vbegm"]
 background_mode = 2
-sky = SubResource("Sky_g14j6")
+sky = SubResource("Sky_vbegm")
 tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ppyta"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbegm"]
+albedo_texture = ExtResource("5_g14j6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mt2j"]
 resource_name = "Torch_2"
@@ -69,7 +77,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bkf8d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g14j6"]
-albedo_texture = ExtResource("4_ppyta")
 
 [node name="test" type="Node3D"]
 
@@ -109,7 +116,7 @@ material = SubResource("StandardMaterial3D_ppyta")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="stage"]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 6.09004, 2.35843, -3.15742)
-material_override = SubResource("StandardMaterial3D_vbegm")
+material_override = SubResource("StandardMaterial3D_ykrsh")
 use_collision = true
 size = Vector3(5.07222, 4.76514, 0.799103)
 material = SubResource("StandardMaterial3D_ehkex")
@@ -137,6 +144,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60167, 0)
 
 [node name="Torch_2" type="MeshInstance3D" parent="player/head"]
 transform = Transform3D(1.16824e-06, -6, -9.05975e-07, 6, 1.16824e-06, -5.24537e-07, 5.24537e-07, -9.05975e-07, 6, 0.484525, -0.333178, -0.649615)
+material_override = SubResource("StandardMaterial3D_vbegm")
 mesh = SubResource("ArrayMesh_ykrsh")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_g14j6")
