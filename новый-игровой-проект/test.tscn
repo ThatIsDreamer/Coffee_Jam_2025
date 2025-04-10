@@ -5,31 +5,7 @@
 [ext_resource type="Script" uid="uid://rk8dqeyq2lbs" path="res://scripts/player.gd" id="3_6uqi0"]
 [ext_resource type="Texture2D" uid="uid://3utttgjthyrj" path="res://assets/assets/hdris/kloppenheim_07_puresky_4k.exr" id="3_ykrsh"]
 [ext_resource type="Texture2D" uid="uid://raihsl1pkiqb" path="res://assets/assets/models/Torch_2/Torch_2_256.png" id="5_g14j6"]
-[ext_resource type="AudioStream" uid="uid://biqvsinbf7tcc" path="res://assets/assets/sfx/flash.mp3" id="5_ykrsh"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g14j6"]
-size = Vector3(5.25195, 5.06036, 5.30518)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppyta"]
-albedo_texture = ExtResource("1_6uqi0")
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykrsh"]
-albedo_texture = ExtResource("2_ppyta")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehkex"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g14j6"]
-panorama = ExtResource("3_ykrsh")
-
-[sub_resource type="Sky" id="Sky_vbegm"]
-sky_material = SubResource("PanoramaSkyMaterial_g14j6")
-
-[sub_resource type="Environment" id="Environment_vbegm"]
-background_mode = 2
-sky = SubResource("Sky_vbegm")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="AudioStream" uid="uid://bdw85jem44rq2" path="res://assets/assets/sfx/flash.mp3" id="5_ykrsh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ppyta"]
 
@@ -78,87 +54,126 @@ shadow_mesh = SubResource("ArrayMesh_bkf8d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g14j6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g14j6"]
+size = Vector3(5.25195, 5.06036, 5.30518)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g14j6"]
+panorama = ExtResource("3_ykrsh")
+
+[sub_resource type="Sky" id="Sky_vbegm"]
+sky_material = SubResource("PanoramaSkyMaterial_g14j6")
+
+[sub_resource type="Environment" id="Environment_vbegm"]
+background_mode = 2
+sky = SubResource("Sky_vbegm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppyta"]
+albedo_texture = ExtResource("1_6uqi0")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykrsh"]
+albedo_texture = ExtResource("2_ppyta")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehkex"]
+
 [node name="test" type="Node3D"]
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23986, 0.498611, -4.06818)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 2.65439, 2.8965, -2.33625)
-shape = SubResource("BoxShape3D_g14j6")
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(384, 216)
+render_target_update_mode = 4
 
-[node name="stage" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412489, 0)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.055, -0.952, -1.713)
-use_collision = true
-size = Vector3(20, 1, 20)
-material = SubResource("StandardMaterial3D_ppyta")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07894, 2.89529, -10.9427)
-use_collision = true
-size = Vector3(20, 8.65137, 1.63965)
-material = SubResource("StandardMaterial3D_ppyta")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3679, 2.89529, -6.55287)
-use_collision = true
-size = Vector3(1.422, 8.65137, 10.4193)
-material = SubResource("StandardMaterial3D_ppyta")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.61138, 2.89529, -1.92698)
-use_collision = true
-size = Vector3(8.93512, 8.65137, 1.16754)
-material = SubResource("StandardMaterial3D_ppyta")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="stage"]
-transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 6.09004, 2.35843, -3.15742)
-material_override = SubResource("StandardMaterial3D_ykrsh")
-use_collision = true
-size = Vector3(5.07222, 4.76514, 0.799103)
-material = SubResource("StandardMaterial3D_ehkex")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51033, 2.92043, -4.70325)
-use_collision = true
-size = Vector3(0.72049, 8.65137, 6.68973)
-material = SubResource("StandardMaterial3D_ppyta")
-
-[node name="env" type="Node3D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
-environment = SubResource("Environment_vbegm")
-
-[node name="player" type="CharacterBody3D" parent="."]
+[node name="player" type="CharacterBody3D" parent="SubViewportContainer/SubViewport"]
 script = ExtResource("3_6uqi0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_ppyta")
 
-[node name="head" type="Node3D" parent="player"]
+[node name="head" type="Node3D" parent="SubViewportContainer/SubViewport/player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60167, 0)
 
-[node name="Torch_2" type="MeshInstance3D" parent="player/head"]
+[node name="Torch_2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/player/head"]
 transform = Transform3D(1.16824e-06, -6, -9.05975e-07, 6, 1.16824e-06, -5.24537e-07, 5.24537e-07, -9.05975e-07, 6, 0.484525, -0.333178, -0.649615)
 material_override = SubResource("StandardMaterial3D_vbegm")
 mesh = SubResource("ArrayMesh_ykrsh")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_g14j6")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="player/head/Torch_2"]
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/player/head/Torch_2"]
 transform = Transform3D(0.166667, 4.90535e-15, -1.77636e-15, -2.20008e-15, 0.166667, 1.77636e-15, 2.66454e-15, -3.55271e-15, 0.166667, 0, 0.00204404, -0.0543042)
 light_energy = 16.0
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 9.88
 light_size = 0.155
 
-[node name="Camera3D" type="Camera3D" parent="player/head"]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/player/head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00290322, 0.152166, 0.00453722)
 
-[node name="flash" type="AudioStreamPlayer3D" parent="player"]
+[node name="flash" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/player"]
 transform = Transform3D(1.94707e-07, -1, -1.50996e-07, 1, 1.94707e-07, -8.74228e-08, 8.74228e-08, -1.50996e-07, 1, 0.472261, 1.26849, -0.975441)
 stream = ExtResource("5_ykrsh")
+
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23986, 0.498611, -4.06818)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Area3D"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 2.65439, 2.8965, -2.33625)
+shape = SubResource("BoxShape3D_g14j6")
+
+[node name="env" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/env"]
+environment = SubResource("Environment_vbegm")
+
+[node name="stage" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412489, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.055, -0.952, -1.713)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_ppyta")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07894, 2.89529, -10.9427)
+use_collision = true
+size = Vector3(20, 8.65137, 1.63965)
+material = SubResource("StandardMaterial3D_ppyta")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="SubViewportContainer/SubViewport/stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3679, 2.89529, -6.55287)
+use_collision = true
+size = Vector3(1.422, 8.65137, 10.4193)
+material = SubResource("StandardMaterial3D_ppyta")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="SubViewportContainer/SubViewport/stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.61138, 2.89529, -1.92698)
+use_collision = true
+size = Vector3(8.93512, 8.65137, 1.16754)
+material = SubResource("StandardMaterial3D_ppyta")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="SubViewportContainer/SubViewport/stage"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 6.09004, 2.35843, -3.15742)
+material_override = SubResource("StandardMaterial3D_ykrsh")
+use_collision = true
+size = Vector3(5.07222, 4.76514, 0.799103)
+material = SubResource("StandardMaterial3D_ehkex")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="SubViewportContainer/SubViewport/stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51033, 2.92043, -4.70325)
+use_collision = true
+size = Vector3(0.72049, 8.65137, 6.68973)
+material = SubResource("StandardMaterial3D_ppyta")
